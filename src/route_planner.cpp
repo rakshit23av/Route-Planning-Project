@@ -57,13 +57,13 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
 
 RouteModel::Node *RoutePlanner::NextNode() {
     
-    std::sort(open_list.begin(), open_list.end(), CompareNodes);
+    std::sort(open_list.begin(), open_list.end(), Compare);
     RouteModel::Node *copy_node = open_list.front(); //create a pointer to the node
     open_list.erase(open_list.begin()); //Remove the node from open_list
     return copy_node;
 }
 
-bool RoutePlanner::CompareNodes(RouteModel::Node const auto *x, RouteModel::Node const auto *y ) {
+bool RoutePlanner::Compare(RouteModel::Node const auto *x, RouteModel::Node const auto *y ) {
     return (x->g_value + x->h_value) < (y->g_value + y->h_value);
 }
 
