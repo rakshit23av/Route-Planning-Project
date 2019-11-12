@@ -63,8 +63,8 @@ RouteModel::Node *RoutePlanner::NextNode() {
     return copy_node;
 }
 
-bool RoutePlanner::Compare(RouteModel::Node const auto *x, RouteModel::Node const auto *y ) {
-    return (x->g_value + x->h_value) < (y->g_value + y->h_value);
+bool RoutePlanner::Compare(RouteModel::Node const auto *a, RouteModel::Node const auto *b ) {
+    return (a->g_value + a->h_value) < (b->g_value + b->h_value);
 }
 
 // TODO 6: Complete the ConstructFinalPath method to return the final path found from your A* search.
