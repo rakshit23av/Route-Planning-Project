@@ -63,7 +63,7 @@ RouteModel::Node *RoutePlanner::NextNode() {
     return copy_node;
 }
 
-bool RoutePlanner::Compare(RouteModel::Node const auto *a, RouteModel::Node const auto *b ) {
+bool RoutePlanner::Compare(RouteModel::Node const *a, RouteModel::Node const *b ) {
     return (a->g_value + a->h_value) < (b->g_value + b->h_value);
 }
 
